@@ -1,0 +1,17 @@
+---
+- name: "Create Ec2 server"
+  hosts: localhost
+  tasks:
+    - name: "EC2 spec"
+      ec2:
+        key_name: newkey
+        instance_type: t2.micro
+        image: ami-09558250a3419e7d0
+        region: us-east-2
+        wait: yes
+        group: test-sg
+        count: 1
+        vpc_subnet_id: subnet-95dfc3ef
+        assign_public_ip: yes
+        aws_access_key: AKIAZMKE5BW2CLB6UWHN
+        aws_secret_key: 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
